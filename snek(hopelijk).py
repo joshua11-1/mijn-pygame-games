@@ -44,6 +44,7 @@ while True:
     if snake.left < 0 or snake.right > WINDOW or snake.top < 0 or snake.bottom > WINDOW or self_eating:
         snake.center, food.center = get_random_position(), get_random_position()
         lenght, snake_dir = 1, (0, 0)
+        score = 0
         segment = [snake.copy()]
     # check food
     if snake.center == food.center:
