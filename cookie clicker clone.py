@@ -12,7 +12,7 @@ clock = pygame.time.Clock()
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 pygame.display.set_caption('cookie clicker clone')
 
-font = pygame.font.Font('freesansbold.ttf', 32)
+font = pygame.font.Font('freesansbold.ttf', 22)
 
 while True:
     for event in pygame.event.get():
@@ -22,15 +22,21 @@ while True:
     screen.fill(BLACK)
 
     pygame.draw.circle(screen, 'red' ,player_pos, 40)
+    pygame.mouse.set_visible(False)
 
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
         SCORE = SCORE + 1
         pygame.draw.circle(screen, 'white' ,player_pos, 40)
-        sleep(0.3)
-        print(SCORE)
+        sleep(0.2)
 
+    if keys[pygame.K_r]:
+        SCORE = 0
+        sleep(0.7)
+    
+    text2 = font.render('Press W to add 1 to your score and R to reset', True, 'white')
+    screen.blit(text2, (70 ,550))
     text = font.render('Score: ' + str(SCORE), True, 'white')
     screen.blit(text, (5, 10))
 
