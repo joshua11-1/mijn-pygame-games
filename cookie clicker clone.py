@@ -19,7 +19,7 @@ while True:
         if event.type == pygame.QUIT:
             exit()
 
-    screen.fill(BLUE)
+    screen.fill(BLACK)
 
     pygame.draw.circle(screen, 'red' ,player_pos, 40)
 
@@ -27,13 +27,14 @@ while True:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
         SCORE = SCORE + 1
-        pygame.draw.circle(screen, 'black' ,player_pos, 40)
+        pygame.draw.circle(screen, 'white' ,player_pos, 40)
         sleep(0.3)
         print(SCORE)
 
     text = font.render('Score: ' + str(SCORE), True, 'white')
-    screen.blit(text, (40, 100))
+    screen.blit(text, (5, 10))
 
     pygame.display.flip()
     clock.tick(60)
     pygame.display.update
+
