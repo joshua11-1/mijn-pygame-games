@@ -17,7 +17,7 @@ food.center = get_random_position()
 screen = pg.display.set_mode([WINDOW] * 2)
 clock = pg.time.Clock()
 dirs = {pg.K_w: 1,pg.K_a: 1,pg.K_s: 1,pg.K_d: 1,}
-pg.display.set_caption('snake game in python')
+pg.display.set_caption('snake in python')
 score = 0
 font = pg.font.Font('freesansbold.ttf', 32)
 
